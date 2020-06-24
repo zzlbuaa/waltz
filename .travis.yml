@@ -11,11 +11,11 @@ install:
   - sudo vagrant plugin install vagrant-google
   - sudo vagrant plugin install inifile
   - sudo vagrant plugin install vagrant-hostmanager
-  -
+
 script:
   - git clone https://github.com/wepay/ducktape.git
-  - cd ducktap && python setup.py install && cd ..
-  - sudo vagrant up # The error is only presented when executing vagrant up
+  - cd ducktape && python setup.py install && cd ..
+  - sudo vagrant up --provider=google --no-parallel # The error is only presented when executing vagrant up
   - sudo vagrant ssh -c "echo 'hello world!'"
 after-script:
   - sudo vagrant halt
