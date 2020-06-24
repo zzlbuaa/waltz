@@ -1,12 +1,26 @@
-language: java
-os: linux
-dist: trusty
-jdk: oraclejdk8
-
-before_cache:
-  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
-  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
-cache:
-  directories:
-    - $HOME/.gradle/caches/
-    - $HOME/.gradle/wrapper/
+language: python
+python:
+- '2.7'
+install:
+- sudo apt-get update && sudo apt-get install -y bridge-utils dnsmasq-base ebtables
+  libvirt-bin libvirt-dev qemu-kvm qemu-utils ruby-dev
+- sudo wget -nv https://releases.hashicorp.com/vagrant/2.2.7/vagrant_2.2.7_x86_64.deb
+- sudo dpkg -i vagrant_2.2.7_x86_64.deb
+- vagrant --version
+- sudo vagrant plugin install vagrant-google
+- sudo vagrant plugin install inifile
+- sudo vagrant plugin install vagrant-hostmanager
+script:
+- ls
+- pwd
+- git clone https://github.com/wepay/ducktape.git
+- cd ducktape && python setup.py install && cd ..
+- sudo vagrant up --provider=google --no-parallel
+- sudo vagrant ssh -c "echo 'hello world!'"
+after-script:
+- sudo vagrant halt
+- sudo vagrant destroy
+before_install:
+- openssl aes-256-cbc -K $encrypted_89268112dde1_key -iv $encrypted_89268112dde1_iv
+  -in mythic-crane-708-cbabaaf6e125.json.enc -out mythic-crane-708-cbabaaf6e125.json
+  -d

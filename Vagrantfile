@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
       node.vm.provider :google do |google, override|
         # google project & service account
         google.google_project_id = cfg['GoogleProjectId']
-        google.google_client_email = cfg['GoogleClientEmail']
+#         google.google_client_email = cfg['GoogleClientEmail']
         google.google_json_key_location = cfg['GoogleJsonKeyLocation']
 
         # gce image config
@@ -59,7 +59,7 @@ Vagrant.configure("2") do |config|
       node.vm.provider :google do |google, override|
         # google project & service account
         google.google_project_id = cfg['GoogleProjectId']
-        google.google_client_email = cfg['GoogleClientEmail']
+#         google.google_client_email = cfg['GoogleClientEmail']
         google.google_json_key_location = cfg['GoogleJsonKeyLocation']
 
         # gce image config
@@ -95,7 +95,7 @@ Vagrant.configure("2") do |config|
       node.vm.provider :google do |google, override|
         # google project & service account
         google.google_project_id = cfg['GoogleProjectId']
-        google.google_client_email = cfg['GoogleClientEmail']
+#         google.google_client_email = cfg['GoogleClientEmail']
         google.google_json_key_location = cfg['GoogleJsonKeyLocation']
 
         # gce image config
