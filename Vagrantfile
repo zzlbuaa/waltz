@@ -6,7 +6,7 @@
 # Waltz common GCE configuration (Please fill in all fields)
 GoogleProjectId=mythic-crane-708
 GoogleClientEmail=waltz-517@mythic-crane-708.iam.gserviceaccount.com
-GoogleJsonKeyLocation=/mythic-crane-708-cbabaaf6e125.json
+GoogleJsonKeyLocation=/home/travis/build/zzlbuaa/waltz/mythic-crane-708-cbabaaf6e125.json
 GoogleNetwork=poc
 GoogleSubnetwork=mythic-crane-internal-network
 

@@ -11,6 +11,7 @@ install:
 - sudo vagrant plugin install inifile
 - sudo vagrant plugin install vagrant-hostmanager
 script:
+- ls
 - pwd
 - git clone https://github.com/wepay/ducktape.git
 - cd ducktape && python setup.py install && cd ..
